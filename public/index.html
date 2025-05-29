@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase App Hosting Skeleton</title>
+</head>
+<body>
+  <h1>Welcome to Firebase App Hosting</h1>
+  <button id="check">Check Health</button>
+  <p id="result"></p>
+  <script>
+    document.getElementById('check').addEventListener('click', async () => {
+      const res = await fetch('/health');
+      const data = await res.json();
+      document.getElementById('result').textContent = JSON.stringify(data);
+    });
+  </script>
+</body>
+</html>
